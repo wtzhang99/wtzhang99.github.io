@@ -563,6 +563,7 @@ form {
 }
 
 .u-max-full-width {
+  width: 100%;
   max-width: 175px;
   box-sizing: border-box;
   border-radius: 50%;
@@ -611,13 +612,25 @@ there.
 
 
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width: 400px) {
+  .u-max-full-width {
+    /* max-width: 175px; */
+  }
+}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width: 550px) {
+  .u-max-full-width {
+    /* max-width: 120px; */
+  }
+}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width: 750px) {
+  .u-max-full-width {
+    /* max-width: 175px; */
+  }
+}
 
 /* Larger than desktop */
 @media (min-width: 1000px) {}

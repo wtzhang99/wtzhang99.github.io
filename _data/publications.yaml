@@ -14,7 +14,7 @@ papers:
     code: https://github.com/PeterGriffinJin/METAG
 
 
-  - title: "Spatio-temporal meta learning for urban traffic prediction"
+  - title: "Spatio-Temporal Meta Learning for Urban Traffic Prediction"
     authors: "Zheyi Pan, <b>Wentao Zhang</b>, Yuxuan Liang, Weinan Zhang, Yong Yu, Junbo Zhang, Yu Zheng"
     venue: "Transactions on Knowledge and Data Engineering"
     selected: y

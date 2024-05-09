@@ -1,0 +1,150 @@
+---
+layout: default
+title: Home
+---
+<!-- ========== BIO ========== -->
+<div class="docs-section" id="bio">
+  <h4>Bio</h4>
+  <p>
+    Hi, I am an incoming PhD student at <a href="uwaterloo.ca">University of Waterloo</a>. I am honored to be advised by
+    Prof. <a href="yuntiandeng.com">Yuntian Deng</a> and <a href="cs.uwaterloo.ca/~jimmylin/">Jimmy Lin</a>. Before that
+    I got my Master in Computer Science degree at <a href="illinois.edu">UIUC</a>, where I worked in
+    <a href="http://dm1.cs.uiuc.edu/">Data Mining Group</a>. I received my Bechalor's degree from Zhiyuan College, <a
+      href="https://en.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a>, under the supervision of <a
+      href="https://wnzhang.net/">Prof. Weinan
+      Zhang</a> and <a href="https://scholar.google.com/citations?user=-84M1m0AAAAJ&hl=en">Prof. Yong Yu</a>
+  </p>
+  <p>
+    My research interests are Natural Language Processing/Understanding and Information Retrieval. Recently I am
+    focusing on following topics:
+  <ul class="container" style="width: 95%; max-width:95%">
+    <li><b>Language language models work with smaller models: </b> Large language models are powerful, but not Large
+      language models are powerful, but are expensive. It's worthwhile to explore how to let LLMs and smaller models
+      work together or how to let smaller mdoels work (hopefully) as good as larger models.</li>
+    <li><b>Language modeling with structured data: </b> Language models succedded in modeling seqential data or
+      unstructured data, such as text, images, and videos. But how can we incooperate language models with structured
+      data, such as information network, taxonomy, event triplets, and tabular data ?</li>
+    <li><b>Representation learning, information retrieval and their applications:</b> Good represetations matters, they
+      connect
+      different modalities and models. Training representations for various task is a long lasting problem.</li>
+  </ul>
+  </p>
+</div>
+
+<div class="docs-section" id="news">
+  <h4>News</h4>
+  <div style="max-height: 200px; overflow:auto;  direction: rtl;">
+    <div class="news-item"><b>[2024-05-01]</b> New persoanl page initial setup</div>
+  </div>
+</div>
+
+
+<!-- ========== PUBLICATIONS ========== -->
+<div class="docs-section" id="publications">
+  <h4>Publications</h4>
+
+  <p>Full publications on <a href="{{ site.data.main_info.google_scholar }}" target="_blank">Google
+      Scholar</a>.<br />
+    <sup>‡</sup> indicates equal contribution.
+  </p>
+
+  <ul class="tab-nav">
+    <li>
+      <div class="button active" data-ref="#papers-selected">Selected</div>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="papers-selected">
+      {% assign selected_papers = site.data.publications.papers | where: "selected", "y" %}
+      {% for paper in selected_papers %}
+      <div class="paper">
+        <p class="title"><b>{{ paper.title }}</b></p>
+        <p>{{ paper.authors }}</p>
+        <p><i>{{ paper.venue }}</i></p>
+        <div class="paper-buttons">
+          {% if paper.paper_pdf %}
+          <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+          {% endif %}
+
+          {% if paper.slides %}
+          <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+          {% endif %}
+
+          {% if paper.poster %}
+          <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+          {% endif %}
+
+          {% if paper.video %}
+          <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+          {% endif %}
+
+          {% if paper.code %}
+          <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+          {% endif %}
+
+          {% if paper.data %}
+          <a class="button" href="{{ paper.data }}" target="_blank">Data</a>
+          {% endif %}
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<!-- ========== RESUME ========== -->
+<div class="docs-section" id="experience">
+  <h4>Professional Exerience</h4>
+
+
+  <div class="professional-experience-item">
+    <img src="/assets/profile-pics/tiktok_logo.jpeg" class="company-icon">
+    <div style="margin-left: 1%; display:flex; flex-direction:column; justify-content: space-between">
+      <div><strong>Machine Learning Engineer, Tiktok</strong></div>
+      <div>San Jose, Aug 2023 - Aug 2024</div>
+      <div>Search Relevance, Large Language Model for search</div>
+    </div>
+  </div>
+
+  <div class="professional-experience-item">
+    <img src="/assets/profile-pics/flexport_logo.jpeg" class="company-icon">
+    <div style="margin-left: 1%; display:flex; flex-direction:column; justify-content: space-between">
+      <div><strong>Machine Learning Scientist, Flexport</strong></div>
+      <div>Bellevue, June 2023 - Aug 2023</div>
+      <div>Trucking price modeling, Shipping time prediction.</div>
+    </div>
+  </div>
+
+
+
+  <div class="professional-experience-item">
+    <img src="/assets/profile-pics/moveworksai_logo.jpeg" class="company-icon">
+    <div style="margin-left: 1%; display:flex; flex-direction:column; justify-content: space-between">
+      <div><strong>Machine Learning Intern, Moveworks.ai</strong></div>
+      <div>Mountain View, May 2022 - Aug 2022</div>
+      <div>Language model pretraining for enterprise service.</div>
+    </div>
+  </div>
+
+
+  <div class="professional-experience-item">
+    <img src="/assets/profile-pics/bytedance_logo.jpeg" class="company-icon">
+    <div style="margin-left: 1%; display:flex; flex-direction:column; justify-content: space-between">
+      <div><strong>Research Intern, ByteDance AI Lab</strong></div>
+      <div>Shanghai, Feb 2021 - Aug 2021</div>
+      <div>Supervised by <a href="https://scholar.google.com/citations?user=ZT6jRqwAAAAJ&hl=en">Haoran
+          Huang</a> and <a href="https://hangli-hl.github.io/">Hang
+          Li</a> on educational dialogue system.
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="docs-section" id="template">
+  <h4>Acknowlegement</h4>
+  This website was built based on a template by <a href="https://github.com/msaveski/www_personal"
+    target="_blank">Martin Saveski</a>. Thank you!
+</div>

@@ -1,0 +1,21 @@
+papers:
+  - title: "Patton: Language Model Pretraining on Text-Rich Networks"
+    authors: "Bowen Jin, <b>Wentao Zhang</b>, Yu Zhang, Yu Meng, Xinyang Zhang, Qi Zhu and Jiawei Han"
+    venue: "ACL 2023 (Oral)"
+    selected: y
+    paper_pdf: https://arxiv.org/abs/2305.12268
+    code: https://github.com/KSXGroup/Patton
+
+  - title: "Learning Multiplex Embeddings on Text-rich Networks with One Text Encoder"
+    authors: "Bowen Jin, <b>Wentao Zhang</b>, Yu Zhang, Yu Meng, Han Zhao, Jiawei Han"
+    venue: "NeurIPs 2023 New Frontiers in Graph Learning"
+    selected: y
+    paper_pdf: https://arxiv.org/pdf/2310.06684v1.pdf
+    code: https://github.com/PeterGriffinJin/METAG
+
+
+  - title: "Spatio-temporal meta learning for urban traffic prediction"
+    authors: "Zheyi Pan, <b>Wentao Zhang</b>, Yuxuan Liang, Weinan Zhang, Yong Yu, Junbo Zhang, Yu Zheng"
+    venue: "Transactions on Knowledge and Data Engineering"
+    selected: y
+    paper_pdf: https://ieeexplore.ieee.org/abstract/document/9096591

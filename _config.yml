@@ -1,0 +1,8 @@
+source:      .
+destination: ./_site
+includes:    ./_includes
+baseurl: https://wtzhang99.github.io
+
+collections:
+  projects:
+    output: true

@@ -294,5 +294,6 @@ h4 {
   display: flex;
   margin-top: 1.5%;
   margin-bottom: 1.5%;
-  align-items: center
+  align-items: center;
+  font-size: 1.6rem
 }

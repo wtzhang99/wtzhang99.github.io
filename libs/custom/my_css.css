@@ -384,6 +384,8 @@ li {
   }
 
   .teaching-experience-item {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 5%;
   }
 
@@ -415,6 +417,8 @@ li {
   }
 
   .teaching-experience-item {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 2%;
   }
 

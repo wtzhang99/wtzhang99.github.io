@@ -5,6 +5,13 @@ papers:
     selected: y
     paper_pdf: https://arxiv.org/abs/2305.12268
     code: https://github.com/KSXGroup/Patton
+  
+
+  - title: "Spatio-Temporal Meta Learning for Urban Traffic Prediction"
+    authors: "Zheyi Pan, <b>Wentao Zhang</b>, Yuxuan Liang, Weinan Zhang, Yong Yu, Junbo Zhang, Yu Zheng"
+    venue: "Transactions on Knowledge and Data Engineering"
+    selected: y
+    paper_pdf: https://ieeexplore.ieee.org/abstract/document/9096591
 
   - title: "Learning Multiplex Embeddings on Text-rich Networks with One Text Encoder"
     authors: "Bowen Jin, <b>Wentao Zhang</b>, Yu Zhang, Yu Meng, Han Zhao, Jiawei Han"
@@ -14,8 +21,9 @@ papers:
     code: https://github.com/PeterGriffinJin/METAG
 
 
-  - title: "Spatio-Temporal Meta Learning for Urban Traffic Prediction"
-    authors: "Zheyi Pan, <b>Wentao Zhang</b>, Yuxuan Liang, Weinan Zhang, Yong Yu, Junbo Zhang, Yu Zheng"
-    venue: "Transactions on Knowledge and Data Engineering"
+  - title: "From Chat Logs to Collective Insights: Aggregative Question Answering"
+    authors: "<b>Wentao Zhang</b>, Woojeong Kim, Yuntian Deng"
+    venue: "ArXiv"
     selected: y
-    paper_pdf: https://ieeexplore.ieee.org/abstract/document/9096591
+    paper_pdf: https://arxiv.org/pdf/2505.23765
+    code: https://github.com/yuntian-group/wildchat_aqa

@@ -53,13 +53,13 @@
 
   <!-- Scripts
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!--<link rel="stylesheet" href={{ "/libs/external/github-prettify-theme.css" | prepend: site.baseurl }}>-->
+  <!--<link rel="stylesheet" href=/libs/external/github-prettify-theme.css>-->
   <script src={{ "/libs/custom/my_js.js" | prepend: site.baseurl }}></script>
 
   <!-- <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link rel="icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}>
-  <link rel="shortcut icon" type="image/png" href={{ "/libs/icon.png" | prepend: site.baseurl }}> -->
+  <!-- <link rel="icon" type="image/png" href=/libs/icon.png>
+  <link rel="shortcut icon" type="image/png" href=/libs/icon.png> -->
 
 </head>
 
@@ -67,40 +67,10 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container page-container">
+  <div class="container page-container blog-layout">
 
-    <section class="header">
-      <div class="row">
-        <div class="three columns">
-          <img class="u-max-full-width" src='{{ site.baseurl }}{{ site.data.main_info.profile_pic }}'></a>
-        </div>
-        <div class="nine columns main-description">
-          <h1>{{ site.data.main_info.name }}</h1>
-          <p>{{ site.data.main_info.title }}</p>
-          <p>{{ site.data.main_info.email }}</p>
-          <p>
-            <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </span>
-
-            <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-              <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-            </span>
-
-            <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
-              <i class="fa fa-github" aria-hidden="true"></i>
-            </span>
-
-            <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" style="cursor: pointer">
-              <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
-            </span>
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="navbar-spacer"></div>
+    <!-- Blog Navigation Only -->
+    <div class="blog-navbar-spacer"></div>
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
@@ -110,11 +80,12 @@
           </li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl
               }}>Publications</a></li>
+          
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#teaching" | prepend: site.baseurl
               }}>Teaching</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#experience" | prepend: site.baseurl
               }}>Experience</a></li>
-          <li class="navbar-item"><a class="navbar-link" href={{ "/blog/" | prepend: site.baseurl }}>Blog</a></li>
+        <li class="navbar-item"><a class="navbar-link active" href={{ "/blog/" | prepend: site.baseurl }}>Blog</a></li>
         </ul>
       </div>
     </nav>

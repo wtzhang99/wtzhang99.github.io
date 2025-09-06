@@ -1,0 +1,45 @@
+---
+layout: blog
+---
+
+<div class="docs-section">
+  <div class="post-header">
+    <h2>{{ page.title }}</h2>
+    <p class="post-meta">
+      <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.author %}
+      <span class="post-author">by {{ page.author }}</span>
+      {% endif %}
+      {% if page.tags %}
+      <span class="post-tags">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </span>
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <div class="post-navigation">
+    <div class="nav-links">
+      {% if page.previous.url %}
+      <div class="nav-previous">
+        <a href="{{ page.previous.url | prepend: site.baseurl }}">&laquo; {{ page.previous.title }}</a>
+      </div>
+      {% endif %}
+      {% if page.next.url %}
+      <div class="nav-next">
+        <a href="{{ page.next.url | prepend: site.baseurl }}">{{ page.next.title }} &raquo;</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="post-footer">
+    <a href="{{ '/blog/' | prepend: site.baseurl }}">← Back to Blog</a>
+  </div>
+</div>

@@ -858,12 +858,14 @@ li {
   margin-bottom: 0.8rem;
   line-height: 1.3;
   font-size: 1.8rem;
+  font-weight: 700;
 }
 
 .blog-post-preview h5 a {
   text-decoration: none;
   color: #333;
   transition: color 0.2s ease;
+  font-weight: 700;
 }
 
 .blog-post-preview h5 a:hover {

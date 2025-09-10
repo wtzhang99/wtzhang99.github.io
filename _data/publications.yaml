@@ -6,6 +6,12 @@ papers:
     paper_pdf: https://arxiv.org/pdf/2505.23765
     code: https://github.com/yuntian-group/wildchat_aqa
 
+  - title: "Interactive Training: Feedback-Driven Neural Network Optimization"
+    authors: "<b>Wentao Zhang</b>, Yang Young Lu, Yuntian Deng"
+    venue: "EMNLP 2025 (System Demo Track)"
+    selected: y
+    code: https://github.com/yuntian-group/interactive-training
+
   - title: "Patton: Language Model Pretraining on Text-Rich Networks"
     authors: "Bowen Jin, <b>Wentao Zhang</b>, Yu Zhang, Yu Meng, Xinyang Zhang, Qi Zhu and Jiawei Han"
     venue: "ACL 2023 (Oral)"

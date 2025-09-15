@@ -4,7 +4,7 @@ papers:
     venue: "EMNLP 2025 (Oral)"
     selected: y
     paper_pdf: https://arxiv.org/pdf/2505.23765
-    code: https://github.com/yuntian-group/wildchat_aqa
+    code: https://github.com/yuntian-group/wildchat_aggregative_question_answering
 
   - title: "Interactive Training: Feedback-Driven Neural Network Optimization"
     authors: "<b>Wentao Zhang</b>, Yang Young Lu, Yuntian Deng"

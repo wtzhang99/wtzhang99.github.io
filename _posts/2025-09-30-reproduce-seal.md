@@ -101,7 +101,7 @@ While the paper provided code, we found that training under the framework is ver
 To accelerate training and make experiments feasible, we rewrote the training framework using Ray, which enables parallel SFT training and flexible worker scheduling. The below figure illustrates the pipeline how the pipeline runs:
 
 <div class="responsive-image-container">
-    <img src="/blog/2025/09/30/reproduce-seal/implementation_updated.png" alt="SEAL Implementation Pipeline" class="responsive-image"/>
+    <img src="implementation_updated.png" alt="SEAL Implementation Pipeline" class="responsive-image"/>
 </div>
 
 By fully using GPUs, we achieved a 3x speed up, reducing each training run from 30 hours to 10 hours.
@@ -144,7 +144,7 @@ Note: We reported the best performance by taking the best performance over all R
 One surprising finding is that as models get stronger—especially instruction-tuned models—the improvement from RL (training the model to be a better teacher of itself) becomes moderate to small compared to base models.
 
 <div class="responsive-image-container">
-    <img src="/blog/2025/09/30/reproduce-seal/result-with-gpt5.png" alt="Model Performance Comparison" class="responsive-image"/>
+    <img src="result-with-gpt5.png" alt="Model Performance Comparison" class="responsive-image"/>
 </div>
 
 From the above bar plot we can see that for instruction-tuned models, the improvement brought by RL training the model to be better teachers of themselves becomes moderate to small, compared to base models.

@@ -1,0 +1,8 @@
+<!-- Responsive Image Include -->
+<!-- Usage: {% include responsive_image.html src="image.jpg" alt="Alt text" caption="Optional caption" %} -->
+<div class="responsive-image-container">
+    <img src="{{ include.src }}" alt="{{ include.alt | default: 'Image' }}" class="responsive-image"/>
+    {% if include.caption %}
+    <p class="image-caption" style="margin-top: 0.5rem; font-style: italic; color: #666; font-size: 0.9rem;">{{ include.caption }}</p>
+    {% endif %}
+</div>

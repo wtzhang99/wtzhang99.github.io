@@ -22,14 +22,7 @@ title: Blog
         </span>
         {% endif %}
       </p>
-      <div class="post-excerpt">
-        {% if post.excerpt %}
-          {{ post.excerpt | strip_html | truncatewords: 50 }}
-        {% else %}
-          {{ post.content | strip_html | truncatewords: 50 }}
-        {% endif %}
-        <a href="{{ post.url | prepend: site.baseurl }}">Read more &raquo;</a>
-      </div>
+
     </div>
     {% endfor %}
   </div>

@@ -235,7 +235,7 @@ From the above results, most improvements come from self-editing the model rathe
 We also ran an additional experiment showing that using an external editor can achieve comparable or even better results at a fraction of the cost.
 For example, the figure above shows the results of using GPT-5 to generate edits with **low reasoning effort**, which still perform very well overall. Moreover, using GPT-5 is significantly cheaper than the RL training process.
 
-Training one round of RL required two L40S GPUs for one hour, costing $0.88 (the lowest available rate). Ten rounds cost $8.80.
+Training one round of RL required two L40S GPUs for one hour, costing **$0.88** (the lowest available rate). Ten rounds cost **$8.80**.
 In contrast, directly calling the GPT-5 API used 44,496 input tokens and 143,673 output tokens, costing only **$0.746** with batch requests.
 
 This demonstrates that **using strong LLM APIs can be a highly effective and cost-efficient alternative** to RL training for most use cases.

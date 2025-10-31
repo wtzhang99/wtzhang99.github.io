@@ -989,7 +989,7 @@ li {
 
 /* Responsive images */
 .responsive-image {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
   display: block;
   margin: 1.5rem auto;
@@ -1015,7 +1015,7 @@ li {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   min-width: 400px; /* Prevent table from becoming too narrow */
 }
 
@@ -1047,7 +1047,7 @@ li {
 /* Mobile optimizations */
 @media (max-width: 768px) {
   .responsive-table {
-    font-size: 0.8rem;
+    font-size: 1.05rem;
     min-width: 350px;
   }
   
@@ -1067,7 +1067,7 @@ li {
 
 @media (max-width: 480px) {
   .responsive-table {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     min-width: 300px;
   }
   

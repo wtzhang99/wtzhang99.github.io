@@ -11,16 +11,18 @@ tags: [NLP, LLM, Research]
 
 ## TLDR
 
-We reproduced the paper's knowledge integration experiments and extended them to additional models. Our findings are:
+We reproduced the paper’s knowledge integration experiments and extended them to additional models. Our findings are:
 
 * The results are **reproducible**.
 * SEAL consists of two steps:
-  (A) **Self-editing** — the model generates edits based on new external information and is fine-tuned on them.
-  (B) **Reinforcement learning (RL)** — the model is trained to become a better self-editor by optimizing its edit quality through RL.
+    (A) **Self-editing** — the model generates edits based on new external information and is fine-tuned on them.
+    (B) **Reinforcement learning (RL)** — the model is trained to become a better self-editor by optimizing its edit quality through RL.
 * For **instruction-tuned models**, almost all improvements came from Step A. Step B added little benefit despite being far more expensive.
 * Even with a 3× speedup from our Ray-based reimplementation, Step B remains slow because each reward computation requires fine-tuning.
+* **Using a strong external editor (e.g., GPT-5) achieves comparable results at a fraction of the cost**, making it a practical alternative to RL-based training.
 
-In short, **self-editing alone provides most of the benefit**. Simply prompting a strong model to generate edits is far more cost-effective than training it via RL to become a better self-editor.
+In short, **self-editing alone provides most of the benefit**, and strong external editors can outperform RL training in both efficiency and cost.
+
 
 ---
 

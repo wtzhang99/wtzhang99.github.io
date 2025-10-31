@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Reproducing <em>Self-Adapting Language Models</em>"
-date: 2025-09-30
+date: 2025-10-31
 author: Wentao Zhang (w564zhan@uwaterloo.ca)
 tags: [NLP, LLM, Research]
 ---

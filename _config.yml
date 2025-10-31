@@ -1,11 +1,11 @@
 source:      .
 destination: ./_site
 includes:    ./_includes
-baseurl: https://wtzhang99.github.io
-# baseurl: ""
+# baseurl: https://wtzhang99.github.io
+baseurl: ""
 
 # Blog settings
-permalink: /blog/:year/:month/:day/:title/
+permalink: /blog/:title/
 paginate: 5
 paginate_path: "/blog/page:num/"
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reproducing <em>Self-Adapting Language Models</em>: A Two-Step View and Observations from a Small-Scale Reproduction"
+title: "Reproducing <em>Self-Adapting Language Models</em>"
 date: 2025-09-30
 author: Wentao Zhang (w564zhan@uwaterloo.ca)
 tags: [NLP, LLM, Research]

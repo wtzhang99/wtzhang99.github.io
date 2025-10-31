@@ -229,7 +229,7 @@ The following table shows the same results numerically:
 From the above results, most improvements come from self-editing the model rather than from the expensive RL training. Our first recommendation is to **prompt the model to generate self-edits directly, instead of training it to become a better self-editor.**
 
 <div class="responsive-image-container">
-    <img src="result-instruct-vs-base.png" alt="Model Performance Comparison" class="responsive-image"/>
+    <img src="result-with-gpt5.png" alt="Model Performance Comparison" class="responsive-image"/>
 </div>
 
 We also ran an additional experiment showing that using an external editor can achieve comparable or even better results at a fraction of the cost.

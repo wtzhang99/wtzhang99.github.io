@@ -1,8 +1,8 @@
 source:      .
 destination: ./_site
 includes:    ./_includes
-# baseurl: https://wtzhang99.github.io
-baseurl: ""
+baseurl: https://wtzhang99.github.io
+# baseurl: ""
 
 # Blog settings
 permalink: /blog/:title/

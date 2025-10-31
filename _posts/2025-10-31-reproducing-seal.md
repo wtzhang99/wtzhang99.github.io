@@ -41,7 +41,9 @@ For example, suppose the news reads:
 
 > Apple launches iPhone 17.
 
-If we ask an outdated model *“What is the latest iPhone?”*, it might still answer *“iPhone 16.”*
+If we ask an outdated model *"What is the latest iPhone?"*, it might still answer *"iPhone 16."*
+
+
 With self-editing, the model itself generates a new training pair:
 
 ```
@@ -53,9 +55,9 @@ Fine-tuning on such edits updates the model so it answers correctly in the futur
 
 ---
 
-### Step B — Training the model to be a better self-editor
+### Step B — Training the model to be a better self-editor through RL
 
-Step A assumes the model can already generate useful edits—but SEAL makes an important assumption: **in practice, models are initially not strong enough at generating good self-edits on their own.** We will revisit this assumption later. 
+Step A assumes the model can already generate useful edits, but SEAL makes an important assumption: **models are initially not strong enough at generating good self-edits on their own.** We will revisit this assumption later. 
 
 To address this, SEAL introduces Step B: training the model to improve its ability to generate effective edits through RL.
 
@@ -73,22 +75,23 @@ For intuition, suppose we prompt the model to sample self-edits from the same ne
   A: iPhone 17.
   ```
 
-If we fine-tune on Version 1, the model still cannot answer *“What is the latest iPhone?”* correctly.
+If we fine-tune on Version 1, the model still cannot answer *"What is the latest iPhone?"* correctly.
+
 If we fine-tune on Version 2, it now answers correctly.
 
 SEAL uses the outcome after fine-tuning as the reward. Version 1 would receive **reward = 0** because the fine-tuned model couldn't answer correctly and Version 2 **reward = 1**.
-The training loop then nudges the model toward producing more Version 2–style edits — effectively making it a **better self-editor**.
+The training loop then nudges the model toward producing more Version 2–style edits, effectively making it a **better self-editor**.
 
 ---
 
-**How this RL works in practice ?**
+**How does this RL work in practice?**
 
-Although described as reinforcement learning, the procedure reduces to a form of supervised training on successful self-edits. The loop is essentially:
+Although described as reinforcement learning, the procedure functions more like supervised training on successful self-edits. The loop is roughly:
 
 1. Generate multiple candidate self-edits.
-2. fine-tune the model separately on each and evaluate performance.
-3. Keep the edits that improved performance, discard the rest.
-4. Fine-tune the model on edits from step 3.
+2. Fine-tune the model separately on each and evaluate performance.
+3. Keep the edits that improve performance; discard the rest.
+4. Fine-tune the model on the retained edits.
 
 In practice, this process looks like: *sample → fine-tune (incorporate new knowledge) → evaluate → filter → meta-fine-tune (learn to teach itself better).*
 
@@ -96,8 +99,8 @@ In practice, this process looks like: *sample → fine-tune (incorporate new kno
 
 **Key distinction:**
 
-- **Step A:** *directly injects new knowledge into model parameters through self-edits.*
-- **Step B:** *optimizes the model's ability to generate better self-edits that can more effectively teach itself.*
+* **Step A:** *Directly injects new knowledge into the model via self-edits.*
+* **Step B:** *Optimizes the model's ability to generate higher-quality self-edits.*
 
 ---
 
@@ -105,21 +108,21 @@ In practice, this process looks like: *sample → fine-tune (incorporate new kno
 
 While the original paper provided code, we found training to be very slow: even with only 50 examples, one RL round took **3 hours** on two L40 GPUs. Running 10 RL rounds required roughly **30 hours per experiment**.
 
-For each text input, we need to rollout different generations, and we need to fine-tune the model to compute the reward (in the actual implementation, 3 times of finetuning per rollout to compute average reward).
+For each text input, the pipeline generates multiple rollouts, and each reward computation involves several rounds of fine-tuning (three per rollout in the original implementation).
 
-To accelerate training and make experiments feasible, we reimplement the training framework using **Ray**, which enables parallel SFT training and flexible worker scheduling. The below figure illustrates the pipeline how the pipeline runs:
+To accelerate experiments, we reimplemented the training framework in **Ray**, enabling parallel SFT runs and flexible worker scheduling. The figure below illustrates our pipeline:
 
 <div class="responsive-image-container">
     <img src="implementation_updated.png" alt="SEAL Implementation Pipeline" class="responsive-image"/>
 </div>
 
-By fully using GPUs, we achieved a 3x speed up, reducing each training run from 30 hours to 10 hours.
+By fully utilizing GPUs, we achieved a **3× speedup**, reducing total training time from 30 hours to about 10 hours per run.
 
 ---
 
-## Are the results in the original paper reproducible?
+## Are the Results in the Original Paper Reproducible?
 
-We'd say, yes! At least in the knowledge incorporation setting.
+Yes, at least for the knowledge incorporation setting.
 
 <div class="responsive-table-container">
 <table class="responsive-table">
@@ -133,13 +136,13 @@ We'd say, yes! At least in the knowledge incorporation setting.
 </thead>
 <tbody>
 <tr>
-<td data-label="Model">Qwen 2.5 3B (Reported by Author)</td>
+<td data-label="Model">Qwen 2.5 3B-Base (Original Paper)</td>
 <td data-label="Adapting using Vanilla Model">31.93%</td>
 <td data-label="Adapting using Trained Model">36.98%</td>
 <td data-label="Improvement">5.05%</td>
 </tr>
 <tr>
-<td data-label="Model">Qwen 2.5 3B</td>
+<td data-label="Model">Qwen 2.5 3B-Base (Our Reproduction)</td>
 <td data-label="Adapting using Vanilla Model">31.31%</td>
 <td data-label="Adapting using Trained Model">38.91%</td>
 <td data-label="Improvement">7.60%</td>
@@ -148,13 +151,14 @@ We'd say, yes! At least in the knowledge incorporation setting.
 </table>
 </div>
 
-Note: The original paper didn't do checkpoint selection. Here we selected the best checkpoint across RL rounds. One caveat is we used test set for checkpoint selection due to the lack of a pre-defined validation set. Ideally, we should reserve part of training set for validation.
+Note: The original paper did not perform checkpoint selection. We selected the best checkpoint across RL rounds.
+Due to the lack of a predefined validation set, we used the test set for checkpoint selection—a limitation that could be improved in future work.
 
 ---
 
-## Is training the model to be better self-editors really necessary?
+## Is Training the Model to Be a Better Self-Editor Really Necessary?
 
-Our surprising finding is that as models as models become stronger (e.g., instruction-tuned rather than base models), the improvement from RL (training the model to be a better self-editor) becomes smaller.
+Our key finding is that as models become stronger (e.g., instruction-tuned rather than base models), the benefit from RL-based self-editor training becomes smaller.
 
 <div class="responsive-image-container">
     <img src="result-instruct-vs-base.png" alt="Model Performance Comparison" class="responsive-image"/>
@@ -163,9 +167,9 @@ Our surprising finding is that as models as models become stronger (e.g., instru
 <!-- From the above bar plot we can see that for instruction-tuned models, the improvement brought by RL training 
 the model to be better self-editors of themselves becomes moderate to small, compared to base models. -->
 
-In the above plot, compare the red bars (without RL) to the yellow bars (with RL), they are not much different especially for instruction-tuned models. 
+In the plot above, the red bars (without RL) and yellow bars (with RL) show minimal differences for instruction-tuned models.
 
-The following table presents the same results in numbers (with a column: Is-Instruction-Tuned). From this table you can see the improvement from RL is smaller for instruction-tuned models.
+The following table shows the same results numerically:
 
 <div class="responsive-table-container">
 <table class="responsive-table">

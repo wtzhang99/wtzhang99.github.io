@@ -1219,11 +1219,11 @@ pre {
 
 /* Medium-sized image: smaller on desktop, larger on mobile */
 .responsive-image.medium {
-  max-width: 55%;
+  max-width: 45%;
 }
 
 @media (max-width: 768px) {
   .responsive-image.medium {
-    max-width: 90%;
+    max-width: 85%;
   }
 }

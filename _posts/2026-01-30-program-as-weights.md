@@ -52,7 +52,7 @@ It works. But it's **expensive**, **fragile** (API outages, silent model updates
      2. Neural Program + Input "...answer is \boxed{42}" → Interpreter (0.6B) → "42"
      Similar to Figure 1 in the paper -->
 <div class="responsive-image-container">
-    <img src="paw-fig1.png" alt="PAW Overview: Compile then Interpret" class="responsive-image"/>
+    <img src="paw-fig1.png" alt="PAW Overview: Compile then Interpret" class="responsive-image medium"/>
 </div>
 
 1. **Neural Compiler** (large model): Takes a natural language specification and produces a compact "neural program"

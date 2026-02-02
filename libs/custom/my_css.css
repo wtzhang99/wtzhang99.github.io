@@ -1183,3 +1183,47 @@ pre {
     opacity: 0.5;
   }
 }
+
+/* ================ Responsive Image Row (side-by-side on desktop, stacked on mobile) ================ */
+.responsive-image-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  margin: 2rem 1rem;
+}
+
+.responsive-image-row .responsive-image-container {
+  flex: 1;
+  margin: 0;
+  padding: 8px;
+}
+
+.responsive-image-row .responsive-image {
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 768px) {
+  .responsive-image-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .responsive-image-row .responsive-image-container {
+    width: 100%;
+  }
+}
+
+/* Medium-sized image: smaller on desktop, larger on mobile */
+.responsive-image.medium {
+  max-width: 55%;
+}
+
+@media (max-width: 768px) {
+  .responsive-image.medium {
+    max-width: 90%;
+  }
+}

@@ -3,7 +3,7 @@ layout: post
 title: "Reproducing <em>Self-Adapting Language Models</em>"
 date: 2025-10-31
 author: Wentao Zhang (w564zhan@uwaterloo.ca)
-tags: [NLP, LLM, Research]
+tags: [NLP, LLM, Research, Continual Learning]
 ---
 <span class="post-author"> Original Paper:<a href="https://arxiv.org/pdf/2506.10943">https://arxiv.org/pdf/2506.10943</a> by Adam Zweiger, Jyothish Pari, Han Guo, Ekin Akyürek, Yoon Kim, Pulkit Agrawal </span>
 

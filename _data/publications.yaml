@@ -1,4 +1,13 @@
 papers:
+
+  - title: "Program-as-Weights: A Programming Paradigm for Fuzzy Functions"
+    authors: "<b>Wentao Zhang*</b>, Liliana Hotsko*, Woojeong Kim*, Pengyu Nie, Stuart Shieber, Yuntian Deng"
+    venue: "NeurIPS 2026"
+    selected: y
+    paper_pdf: https://arxiv.org/abs/2607.02512
+    project: https://programasweights.com/research/
+
+
   - title: "From Chat Logs to Collective Insights: Aggregative Question Answering"
     authors: "<b>Wentao Zhang</b>, Woojeong Kim, Yuntian Deng"
     venue: "EMNLP 2025 (Oral)"
